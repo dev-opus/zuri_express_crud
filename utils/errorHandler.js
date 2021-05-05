@@ -11,3 +11,5 @@ const handleErrors = (err, res) => {
     message,
   });
 };
+
+module.exports = { catchAsyncErrors, handleErrors };

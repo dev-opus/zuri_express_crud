@@ -37,6 +37,14 @@ const updateUserInfo = async (req, res, next) => {
   // users can only update their names and emails
   const { name, email } = req.body;
 
+  if (!name || !email) {
+    return res.status(400).json({
+      status: 'Error',
+      message:
+        'could not update due to empty name or email, please populate name and/or email',
+    });
+  }
+
   const data = await User.findOneAndUpdate({ _id: id }, { name, email }).lean();
 
   // id was wrong

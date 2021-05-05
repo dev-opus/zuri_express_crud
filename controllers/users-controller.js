@@ -54,7 +54,7 @@ const updateUserInfo = async (req, res, next) => {
   });
 };
 
-const deleteUserData = async (req, res, next) => {
+const deleteUserInfo = async (req, res, next) => {
   const { id } = req.params;
 
   const data = await User.findOneAndDelete({ _id: id }).lean();
@@ -72,4 +72,11 @@ const deleteUserData = async (req, res, next) => {
     message: 'User data deleted successully',
     data,
   });
+};
+
+module.exports = {
+  getUserInfo,
+  createUserInfo,
+  updateUserInfo,
+  deleteUserInfo,
 };

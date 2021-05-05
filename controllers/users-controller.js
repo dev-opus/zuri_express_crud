@@ -31,25 +31,45 @@ const createUserInfo = async (req, res, next) => {
   });
 };
 
-
 const updateUserInfo = async (req, res, next) => {
-  const {id} = req.params,
+  const { id } = req.params;
 
   // users can only update their names and emails
-  const { name, email} = req.body
+  const { name, email } = req.body;
 
-  const data = await User.findOneAndUpdate({_id: id}, {name, email}).lean()
+  const data = await User.findOneAndUpdate({ _id: id }, { name, email }).lean();
 
   // id was wrong
   if (!data) {
     return res.status(400).json({
       status: 'Error',
-      message: 'Wrong id, please check id and try again'
-    })
+      message:
+        'could not update due to wrong id, please check id and try again',
+    });
   }
 
   return res.json({
     message: 'User data updated successfully',
-    data
-  })
-}
+    data,
+  });
+};
+
+const deleteUserData = async (req, res, next) => {
+  const { id } = req.params;
+
+  const data = await User.findOneAndDelete({ _id: id }).lean();
+
+  // id was wrong
+  if (!data) {
+    return res.status(400).json({
+      status: 'Error',
+      message:
+        'could not delete due to wrong id, please check id and try again',
+    });
+  }
+
+  res.json({
+    message: 'User data deleted successully',
+    data,
+  });
+};

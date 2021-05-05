@@ -5,5 +5,10 @@
   "main": "app.js",
   "author": "Victor Orlunda <vicorlunda@gmail.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "dotenv": "^8.5.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7"
+  }
 }

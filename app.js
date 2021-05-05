@@ -10,6 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // routes section
+app.use('/', require('./routes/index'));
+app.use('/user-info', require('./routes/users'));
 
 // handle unrecognised routes gracefully
 app.use('*', (req, res) => {

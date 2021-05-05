@@ -1,0 +1,9 @@
+{
+  "name": "express-crud",
+  "version": "1.0.0",
+  "description": "a simple express CRUD app",
+  "main": "app.js",
+  "author": "Victor Orlunda <vicorlunda@gmail.com>",
+  "license": "MIT",
+  "private": true
+}

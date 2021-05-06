@@ -15,7 +15,7 @@ HTTP Methods Available on the above listed enpoints are:
 
 - ``/user-info`` **GET**, **POST**, **PUT** and **DELETE** for respectively getting, creating, updating and deleting the user data.
 
-- For **POST**, **PUT** and **DELETE** methods, the ``user-info`` route expects an  ``id param`` which corresponds to the resource in the database being targetted.
+- For **PUT** and **DELETE** methods, the ``user-info`` route expects an  ``id param`` which corresponds to the resource in the database being targetted.
 
 
 ## Run on web
